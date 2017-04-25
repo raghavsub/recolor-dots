@@ -5,7 +5,7 @@ Usage: recolor COLORFILE [-hd DIR]
   -d DIR --directory=DIR    find dotfile templates in DIR
 """
 
-from .docopt import docopt
+from docopt import docopt
 
 def main():
     arguments = docopt(__doc__)

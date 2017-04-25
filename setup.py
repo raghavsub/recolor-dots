@@ -8,6 +8,6 @@ setup(name='recolor_dots',
       author_email='raghavs511@gmail.com',
       license='MIT',
       packages=['recolor_dots'],
-      install_requires=['jinja2'],
+      install_requires=['docopt', 'pystache', 'pyyaml'],
       entry_points={'console_scripts': ['recolor=recolor_dots.main:main']},
       zip_safe=True)
