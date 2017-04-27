@@ -8,7 +8,7 @@ Installation
 
 ::
     
-    pip install recolor-dots
+    pip install recolor_dots
 
 Usage
 -----
