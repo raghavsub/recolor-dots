@@ -93,41 +93,7 @@ assign [class="slack"] 2
 # floating windows
 for_window [class="pavucontrol"] floating enable
 for_window [class="lxappearance"] floating enable 
-# function keys
-bindsym xf86audioraisevolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym xf86audiolowervolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym xf86audiomute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym xf86monbrightnessup exec xbacklight -inc 20
-bindsym xf86monbrightnessdown exec xbacklight -dec 20
-bindsym xf86audioplay exec mpc toggle
-bindsym xf86audiopause exec mpc toggle
-bindsym xf86audionext exec mpc next
-bindsym xf86audioprev exec mpc previous
-bindsym print exec scrot
 
-# keybindings
-bindsym $mod+return exec termite
-bindsym $mod+shift+q kill
-bindsym $mod+d exec rofi -show run
-
-# startup
-exec --no-startup-id compton
-exec --no-startup-id feh --bg-scale ~/dropbox/wallpapers/ocean.jpg
-exec --no-startup-id mopidy
-exec --no-startup-id polybar top
-
-# scratchpad
-bindsym $mod+apostrophe scratchpad show
-exec --no-startup-id termite --geometry=240x120 --name=scratchpad --title=scratchpad &
-for_window [instance="scratchpad"] floating enable
-f
-# default workspaces
-assign [class="firefox"] 1
-assign [class="slack"] 2
-
-# floating windows
-for_window [class="pavucontrol"] floating enable
-for_window [class="lxappearance"] floating enable 
 # function keys
 bindsym xf86audioraisevolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym xf86audiolowervolume exec --no-startup-id pactl set-sink-volume 0 -5%

@@ -5,8 +5,6 @@ Usage: recolor COLORFILE [-h] [-i INDIR] [-o OUTDIR]
   -i INDIR --in_directory=INDIR     read dotfile templates from INDIR
   -o OUTDIR --out_directory=OUTDIR  write dotfiles to OUTDIR
 """
-from __future__ import print_function
-
 from docopt import docopt
 
 import os
@@ -15,12 +13,12 @@ import yaml
 
 def parse_args(arguments):
     colorfile = arguments['COLORFILE']
-    if arguments['-i']:
-        indir = arguments['INDIR']
+    if arguments['--in_directory']:
+        indir = arguments['--in_directory']
     else:
         indir = '.'
-    if arguments['-o']:
-        outdir = arguments['OUTDIR']
+    if arguments['--out_directory']:
+        outdir = arguments['--out_directory']
     else:
         outdir = 'out'
     indir = os.path.abspath(indir)
