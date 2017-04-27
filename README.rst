@@ -1,2 +1,4 @@
-# recolor-dots
+recolor-dots
+============
+
 Templates for dotfile recoloring
