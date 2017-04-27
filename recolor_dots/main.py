@@ -12,6 +12,17 @@ import pystache
 import yaml
 
 def parse_args(arguments):
+    """
+    Parse the docopt output.
+
+    params:
+    arguments: the docopt output dictionary
+
+    returns:
+    colorfile: the YAML file containing a colorscheme specification
+    indir: the directory to read templates from
+    outdir: the directory to write outputs to
+    """
     colorfile = arguments['COLORFILE']
     if arguments['--in_directory']:
         indir = arguments['--in_directory']
@@ -26,6 +37,18 @@ def parse_args(arguments):
     return colorfile, indir, outdir
 
 def read(colorfile):
+    """
+    Read YAML file colorfile and represent it as a dictionary.
+
+    params:
+    colorfile: the YAML file containing a colorscheme specification
+
+    Each line in colorfile must be one of 'color0: "xxxxxx"', ...,
+    'color16: "xxxxxx"'.
+
+    returns:
+    _dict: the hash corresponding to colorfile
+    """
     with open(colorfile, 'rb') as f:
         _dict = yaml.load(f)
     return _dict
@@ -38,6 +61,8 @@ def _write_one(_dict, infile, outfile):
     _dict: the hash to apply
     infile: the template path (file must exist)
     outfile: the output path (directory must exist)
+
+    The only allowable tags in infile are '{{color0}}', ..., '{{color15}}'.
     """
     with open(infile, 'rb') as f:
         render = pystache.render(f.read().decode('utf-8'), _dict)
@@ -45,6 +70,15 @@ def _write_one(_dict, infile, outfile):
         f.write(render.encode('utf-8'))
 
 def write_all(_dict, indir, outdir):
+    """
+    Apply _dict to the content of each file in indir and write the result to a
+    corresponding file in outdir.
+
+    params:
+    _dict: the hash to apply
+    indir: the directory to read templates from
+    outdir: the directory to write outputs to
+    """
     for root, dirs, files in os.walk(indir):
         for name in files:
             relpath = os.path.relpath(os.path.join(root, name), indir)
