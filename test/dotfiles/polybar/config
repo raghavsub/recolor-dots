@@ -13,8 +13,8 @@ enable-ipc = true
 width = 100%
 height = 24
 
-background = #{{color0}}
-foreground = #{{color15}}
+background = #{{base00}}
+foreground = #{{base05}}
 
 underline-size = 1
 overline-size = 1
@@ -54,20 +54,20 @@ format = <label-state> <label-mode>
 
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-background = #{{color0}}
+label-mode-background = #{{base00}}
 
 label-focused = %icon%
-label-focused-background = #{{color8}}
-label-focused-foreground = #{{color15}}
-label-focused-overline = #{{color3}}
-label-focused-underline = #{{color8}}
+label-focused-background = #{{base01}}
+label-focused-foreground = #{{base05}}
+label-focused-overline = #{{base10}}
+label-focused-underline = #{{base01}}
 label-focused-padding = 2
 
 label-unfocused = %icon%
 label-unfocused-padding = 2
 
 label-urgent = %icon%
-label-urgent-background = #{{color1}}
+label-urgent-background = #{{base08}}
 label-urgent-padding = 2
 
 label-visible = %icon%

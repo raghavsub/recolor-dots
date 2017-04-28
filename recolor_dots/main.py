@@ -43,8 +43,8 @@ def read(colorfile):
     params:
     colorfile: the YAML file containing a colorscheme specification
 
-    Each line in colorfile must be one of 'color0: "xxxxxx"', ...,
-    'color16: "xxxxxx"'.
+    Each line in colorfile must be one of 'base00: "xxxxxx"', ...,
+    'base0F': "xxxxxx"'.
 
     returns:
     _dict: the hash corresponding to colorfile
@@ -62,7 +62,7 @@ def _write_one(_dict, infile, outfile):
     infile: the template path (file must exist)
     outfile: the output path (directory must exist)
 
-    The only allowable tags in infile are '{{color0}}', ..., '{{color15}}'.
+    Each tag must be one of '{{base00}}', ..., '{{base0F}}'.
     """
     with open(infile, 'rb') as f:
         render = pystache.render(f.read().decode('utf-8'), _dict)

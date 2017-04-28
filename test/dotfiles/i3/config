@@ -80,11 +80,11 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# colors
-client.focused          "#{{color8}}" "#{{color8}}" "#{{color15}}" "#{{color8}}"
-client.focused_inactive "#{{color8}}" "#{{color8}}" "#{{color7}}" "#{{color8}}"
-client.unfocused        "#{{color8}}" "#{{color8}}" "#{{color7}}" "#{{color8}}"
-client.urgent           "#{{color8}}" "#{{color8}}" "#{{color7}}" "#{{color8}}"
+# base0s
+client.focused          "#{{base01}}" "#{{base01}}" "#{{base05}}" "#{{base01}}"
+client.focused_inactive "#{{base01}}" "#{{base01}}" "#{{base03}}" "#{{base01}}"
+client.unfocused        "#{{base01}}" "#{{base01}}" "#{{base03}}" "#{{base01}}"
+client.urgent           "#{{base01}}" "#{{base01}}" "#{{base03}}" "#{{base01}}"
 
 # default workspaces
 assign [class="firefox"] 1

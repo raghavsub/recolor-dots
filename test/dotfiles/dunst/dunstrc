@@ -30,13 +30,13 @@
     close_all = ctrl+shift+space
 
 [urgency_low]
-    background = "#{{color8}}"
-    foreground = "#{{color15}}"
+    background = "#{{base01}}"
+    foreground = "#{{base05}}"
 
 [urgency_normal]
-    background = "#{{color8}}"
-    foreground = "#{{color15}}"
+    background = "#{{base01}}"
+    foreground = "#{{base05}}"
 
 [urgency_critical]
-    background = "#{{color8}}"
-    foreground = "#{{color15}}"
+    background = "#{{base08}}"
+    foreground = "#{{base05}}"
