@@ -66,8 +66,10 @@ def _write_one(_dict, infile, outfile):
     """
     with open(infile, 'rb') as f:
         render = pystache.render(f.read().decode('utf-8'), _dict)
+    st = os.stat(infile)
     with open(outfile, 'wb') as f:
         f.write(render.encode('utf-8'))
+    os.chmod(outfile, st.st_mode)
 
 def write_all(_dict, indir, outdir):
     """
